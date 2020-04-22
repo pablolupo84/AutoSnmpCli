@@ -1,16 +1,45 @@
-2020-04-22 18:33:32.878622:Iniciando Auto_SNMPTrapReceiver
-2020-04-22 18:33:32.894222:Inicializando Datos
-2020-04-22 18:33:32.894222:TrapAgentAddress: 127.0.0.1
-2020-04-22 18:33:32.894222:Port: 162
-2020-04-22 18:33:32.894222:CommunityName: my-area
-2020-04-22 18:33:32.894222:ModeCommunity: public
-2020-04-22 18:33:32.894222:UDP over IPv4, first listening interface/port
-2020-04-22 18:33:32.909822:SNMPv1/2c setup
-2020-04-22 18:33:32.941022:--------------------------------------------------------------------------
-2020-04-22 18:33:32.941022:Start SNMPTrapReceiver
-2020-04-22 18:33:32.941022:Agent is listening SNMP Trap on 127.0.0.1 Port : 162
-2020-04-22 18:33:32.941022:--------------------------------------------------------------------------
-2020-04-22 18:33:32.956622:Register SNMP Application at the SNMP engine
-2020-04-22 18:33:32.956622:snmpEngine.transportDispatcher.jobStarted()
-2020-04-22 18:33:34.990062:snmpEngine.transportDispatcher.closeDispatcher()
-2020-04-22 18:33:34.990062:Finaliza app Auto_SNMPTrapReceiver
+2020-04-22 19:33:25.694719:Iniciando Auto_SNMPTrapReceiver
+2020-04-22 19:33:25.694719:Inicializando Datos
+2020-04-22 19:33:25.694719:TrapAgentAddress: 192.168.0.26
+2020-04-22 19:33:25.694719:Port: 162
+2020-04-22 19:33:25.694719:CommunityName: my-area
+2020-04-22 19:33:25.694719:ModeCommunity: public
+2020-04-22 19:33:25.694719:UDP over IPv4, first listening interface/port
+2020-04-22 19:33:25.710319:SNMPv1/2c setup
+2020-04-22 19:33:25.741519:Start SNMPTrapReceiver
+2020-04-22 19:33:25.741519:Agent is listening SNMP Trap on 192.168.0.26 Port : 162
+2020-04-22 19:33:25.741519:Register SNMP Application at the SNMP engine
+2020-04-22 19:33:25.741519:snmpEngine.transportDispatcher.jobStarted()
+2020-04-22 19:34:07.881216:Received new Trap message
+2020-04-22 19:34:07.881216:Notification from ContextEngineId: 0x80004fb80514d8bbc0
+2020-04-22 19:34:07.896816:Name: sysUpTimeInstance | Val: 0
+2020-04-22 19:34:07.896816:Name: snmpTrapOID | Val: coldStart
+2020-04-22 19:36:06.449253:Received new Trap message
+2020-04-22 19:36:06.452253:Notification from ContextEngineId: 0x80004fb80514d8bbc0
+2020-04-22 19:36:06.456253:Name: sysUpTimeInstance | Val: 0
+2020-04-22 19:36:06.460254:Name: snmpTrapOID | Val: coldStart
+2020-04-22 19:36:06.494256:Name: snmpTrapAddress | Val: 192.168.0.26
+2020-04-22 19:36:06.499256:Name: snmpTrapCommunity | Val: public
+2020-04-22 19:36:06.503256:Name: snmpTrapEnterprise | Val: 0.0
+2020-04-22 19:36:28.838858:Received new Trap message
+2020-04-22 19:36:28.840858:Notification from ContextEngineId: 0x80004fb80514d8bbc0
+2020-04-22 19:36:28.844858:Name: sysUpTimeInstance | Val: 0
+2020-04-22 19:36:28.848858:Name: snmpTrapOID | Val: coldStart
+2020-04-22 19:36:41.559799:Received new Trap message
+2020-04-22 19:36:41.562799:Notification from ContextEngineId: 0x80004fb80514d8bbc0
+2020-04-22 19:36:41.566799:Name: sysUpTimeInstance | Val: 0
+2020-04-22 19:36:41.571800:Name: snmpTrapOID | Val: linkDown
+2020-04-22 19:37:04.618219:Received new Trap message
+2020-04-22 19:37:04.618219:Notification from ContextEngineId: 0x80004fb80514d8bbc0
+2020-04-22 19:37:04.618219:Name: sysUpTimeInstance | Val: 0
+2020-04-22 19:37:04.618219:Name: snmpTrapOID | Val: linkDown
+2020-04-22 19:37:27.023019:Received new Trap message
+2020-04-22 19:37:27.023019:Notification from ContextEngineId: 0x80004fb80514d8bbc0
+2020-04-22 19:37:27.023019:Name: sysUpTimeInstance | Val: 0
+2020-04-22 19:37:27.038619:Name: snmpTrapOID | Val: authenticationFailure
+2020-04-22 19:37:44.738478:Received new Trap message
+2020-04-22 19:37:44.754078:Notification from ContextEngineId: 0x80004fb80514d8bbc0
+2020-04-22 19:37:44.754078:Name: sysUpTimeInstance | Val: 300
+2020-04-22 19:37:44.769678:Name: snmpTrapOID | Val: authenticationFailure
+2020-04-22 19:37:50.379309:snmpEngine.transportDispatcher.closeDispatcher()
+2020-04-22 19:37:50.385309:Finaliza app Auto_SNMPTrapReceiver

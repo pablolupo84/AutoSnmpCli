@@ -10,7 +10,7 @@ snmpEngine = SnmpEngine()
 sendNotification(
 		snmpEngine,
 		CommunityData('public'),
-		UdpTransportTarget(('127.0.0.1', 162)),
+		UdpTransportTarget(('192.168.0.26', 162)),
 		ContextData(),
 		'trap',
 		NotificationType(ObjectIdentity('SNMPv2-MIB', 'coldStart')),

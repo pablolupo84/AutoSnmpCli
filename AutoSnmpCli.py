@@ -58,10 +58,11 @@ def InicializarDatos(path_config):
 # noinspection PyUnusedLocal,PyUnusedLocal,PyUnusedLocal
 def cbFun(snmpEngine, stateReference, contextEngineId, contextName,varBinds, cbCtx):
     print('{} : Received new Trap message'.format(datetime.now()));
-    print('{} : Notification from ContextEngineId: {}, ContextName: {}'.format(datetime.now(),contextEngineId.prettyPrint(),
-                                                                        contextName.prettyPrint()))
+    # print('{} : Notification from ContextEngineId: {}, ContextName: {}'.format(datetime.now(),contextEngineId.prettyPrint(),contextName.prettyPrint()))
+    print('{} : Notification from ContextEngineId: {}'.format(datetime.now(),contextEngineId.prettyPrint()))
     ErrorLog.writeLog('Received new Trap message')
-    ErrorLog.writeLog('Notification from ContextEngineId: {}, ContextName: {}'.format(contextEngineId.prettyPrint(),contextName.prettyPrint()))
+    # ErrorLog.writeLog('Notification from ContextEngineId: {}, ContextName: {}'.format(contextEngineId.prettyPrint(),contextName.prettyPrint()))
+    ErrorLog.writeLog('Notification from ContextEngineId: {}'.format(contextEngineId.prettyPrint()))
 
     for name, val in varBinds:
         name_OID=name.prettyPrint()
@@ -74,7 +75,6 @@ def cbFun(snmpEngine, stateReference, contextEngineId, contextName,varBinds, cbC
         print('{} : Name: {} | Val: {}'.format(datetime.now(),name_OID,value_OID))
         print('--------------------------------------------------------------------------')
         ErrorLog.writeLog('Name: {} | Val: {}'.format(name_OID,value_OID))
-        ErrorLog.writeLog('--------------------------------------------------------------------------')
         
 
 if __name__ == '__main__':
@@ -91,7 +91,6 @@ if __name__ == '__main__':
 
     print('\n{} Iniciando Auto_SNMPTrapReceiver'.format(datetime.now()));
     ErrorLog.writeLog('Iniciando Auto_SNMPTrapReceiver')
-
 
     try:
         dic_configuracion=InicializarDatos('config.ini')
@@ -122,11 +121,8 @@ if __name__ == '__main__':
         print("Agent is listening SNMP Trap on {} Port : {}".format(dic_configuracion.get('TrapAgentAddress'),dic_configuracion.get('Port')))
         print('--------------------------------------------------------------------------')
         
-        ErrorLog.writeLog('--------------------------------------------------------------------------')
         ErrorLog.writeLog('Start SNMPTrapReceiver')
         ErrorLog.writeLog("Agent is listening SNMP Trap on {} Port : {}".format(dic_configuracion.get('TrapAgentAddress'),dic_configuracion.get('Port')))
-        ErrorLog.writeLog('--------------------------------------------------------------------------')
-
 
         # Register SNMP Application at the SNMP engine
         ntfrcv.NotificationReceiver(snmpEngine, cbFun)
