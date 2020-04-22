@@ -1,0 +1,16 @@
+2020-04-22 18:33:32.878622:Iniciando Auto_SNMPTrapReceiver
+2020-04-22 18:33:32.894222:Inicializando Datos
+2020-04-22 18:33:32.894222:TrapAgentAddress: 127.0.0.1
+2020-04-22 18:33:32.894222:Port: 162
+2020-04-22 18:33:32.894222:CommunityName: my-area
+2020-04-22 18:33:32.894222:ModeCommunity: public
+2020-04-22 18:33:32.894222:UDP over IPv4, first listening interface/port
+2020-04-22 18:33:32.909822:SNMPv1/2c setup
+2020-04-22 18:33:32.941022:--------------------------------------------------------------------------
+2020-04-22 18:33:32.941022:Start SNMPTrapReceiver
+2020-04-22 18:33:32.941022:Agent is listening SNMP Trap on 127.0.0.1 Port : 162
+2020-04-22 18:33:32.941022:--------------------------------------------------------------------------
+2020-04-22 18:33:32.956622:Register SNMP Application at the SNMP engine
+2020-04-22 18:33:32.956622:snmpEngine.transportDispatcher.jobStarted()
+2020-04-22 18:33:34.990062:snmpEngine.transportDispatcher.closeDispatcher()
+2020-04-22 18:33:34.990062:Finaliza app Auto_SNMPTrapReceiver
