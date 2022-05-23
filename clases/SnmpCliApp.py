@@ -1,9 +1,8 @@
 from pysnmp.entity import engine, config
 from pysnmp.carrier.asyncore.dgram import udp
 from pysnmp.entity.rfc3413 import ntfrcv
-import FileConfigIni
-import LogApp
-
+from clases import FileConfigIni
+from clases import LogApp
 
 class SnmpCliApp():
     
@@ -25,8 +24,8 @@ class SnmpCliApp():
     '1.3.6.1.2.1.1.1.0':'sysDescr'
     }
 
-    def __init__(self):
-        self.logApp=LogApp.LogAppFile("../snmtp_log.txt")
+    def __init__(self,path="snmtp_log.txt"):
+        self.logApp=LogApp.LogAppFile(path)
         #self.logApp=LogApp.LogAppOutput()
         self.snmpEngine= engine.SnmpEngine()
         self.datosConfigIni=FileConfigIni.FileConfigIni()

@@ -10,7 +10,7 @@ class FileConfigIni():
     
     """Constructor: Recibe un path valido y retorna un diccionario parseado"""    
     
-    def __init__(self,path = "../config.ini"):
+    def __init__(self,path = "config.ini"):
         self.path = path
         self.fileParser = configparser.ConfigParser()
         self.fileParser.read(self.path)  
