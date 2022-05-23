@@ -6,7 +6,7 @@ Autor: Autotrol PL - Sistemas
 Version: 0.1
 """
 
-class config():
+class FileConfigIni():
     
     """Constructor: Recibe un path valido y retorna un diccionario parseado"""    
     
@@ -28,7 +28,7 @@ class config():
         self.fileParser.write(open(self.path,'w'))
 
 # TEST clase_config.py
-# configuracion=config()
+# configuracion=FileConfigIni()
 # items=configuracion.showItemSection('TRANSPORT_SETUP')
 # print (items)
 # print (configuracion.showValueItem('TRANSPORT_SETUP','TrapAgentAddress'))
