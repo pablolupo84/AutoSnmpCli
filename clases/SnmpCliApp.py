@@ -6,17 +6,9 @@ import LogApp
 
 
 class SnmpCliApp():
-    #Define path log localmente.
-    #pathLogApp="snmtp_log.txt"
-    #logApp=LogApp.LogAppFile("snmtp_log.txt")
-    # Create SNMP engine with autogenernated engineID and pre-bound
-    # to socket transport dispatcher
-    # snmpEngine= engine.SnmpEngine()
-    
+ 
     dic_configuracion={}
-    #datosConfigIni=FileConfigIni.FileConfigIni()
-    
-    #Ver si sacarlo luego de aqui dentro
+
     OID_reference = {
     '1.3.6.1.6.3.1.1.5.0':'hwLoadAndBackupTrapsOID',
     '1.3.6.1.6.3.1.1.5.1':'coldStart',
@@ -34,25 +26,37 @@ class SnmpCliApp():
     }
 
     def __init__(self):
-        logApp=LogApp.LogAppFile("snmtp_log.txt")
-        snmpEngine= engine.SnmpEngine()
-        datosConfigIni=FileConfigIni.FileConfigIni()
+        self.logApp=LogApp.LogAppFile("snmtp_log.txt")
+        self.snmpEngine= engine.SnmpEngine()
+        self.datosConfigIni=FileConfigIni.FileConfigIni()
 
-        self.InicializarDatos(logApp,datosConfigIni)
+        self.InicializarDatos()
 
-        
+    def InicializarDatos(self):
+        self.logApp.writeLog('Inicializando Datos - Config.ini')
+        self.dic_configuracion.setdefault('TrapAgentAddress',self.datosConfigIni.showValueItem('TRANSPORT_SETUP','TrapAgentAddress'))
+        self.logApp.writeLog('TrapAgentAddress: {}'.format(self.dic_configuracion.get('TrapAgentAddress')))
+        self.dic_configuracion.setdefault('Port',int(self.datosConfigIni.showValueItem('TRANSPORT_SETUP','Port')))
+        self.logApp.writeLog('Port: {}'.format(self.dic_configuracion.get('Port')))
+        self.dic_configuracion.setdefault('CommunityName',self.datosConfigIni.showValueItem('SNMP_V12_SETUP','CommunityName'))
+        self.logApp.writeLog('CommunityName: {}'.format(self.dic_configuracion.get('CommunityName')))
+        self.dic_configuracion.setdefault('ModeCommunity',self.datosConfigIni.showValueItem('SNMP_V12_SETUP','ModeCommunity'))
+        self.logApp.writeLog('ModeCommunity: {}'.format(self.dic_configuracion.get('ModeCommunity')))
 
-    def InicializarDatos(self,logApp,datosConfigIni):
-        logApp.writeLog('Inicializando Datos - Config.ini')
-        self.dic_configuracion.setdefault('TrapAgentAddress',datosConfigIni.showValueItem('TRANSPORT_SETUP','TrapAgentAddress'))
-        logApp.writeLog('TrapAgentAddress: {}'.format(self.dic_configuracion.get('TrapAgentAddress')))
-        self.dic_configuracion.setdefault('Port',int(datosConfigIni.showValueItem('TRANSPORT_SETUP','Port')))
-        logApp.writeLog('Port: {}'.format(self.dic_configuracion.get('Port')))
-        self.dic_configuracion.setdefault('CommunityName',datosConfigIni.showValueItem('SNMP_V12_SETUP','CommunityName'))
-        logApp.writeLog('CommunityName: {}'.format(self.dic_configuracion.get('CommunityName')))
-        self.dic_configuracion.setdefault('ModeCommunity',datosConfigIni.showValueItem('SNMP_V12_SETUP','ModeCommunity'))
-        logApp.writeLog('ModeCommunity: {}'.format(self.dic_configuracion.get('ModeCommunity')))
+    def cbFun(self,snmpEngine, stateReference, contextEngineId, contextName,varBinds, cbCtx):
+        self.logApp.writeLog('Received new Trap message')
+        self.logApp.writeLog('Notification from ContextEngineId: {}'.format(contextEngineId.prettyPrint()))
+
+        for name, val in varBinds:
+            name_OID=name.prettyPrint()
+            value_OID=val.prettyPrint()    
+            if (self.OID_reference.get(name.prettyPrint())!=None):
+                name_OID=self.OID_reference.get(name.prettyPrint())
+            if (self.OID_reference.get(val.prettyPrint())!=None):
+                value_OID=self.OID_reference.get(val.prettyPrint())
+
+            self.logApp.writeLog('Name: {} | Val: {}'.format(name_OID,value_OID))
 
 
-# test=SnmpCliApp()
-# print(len(test.dic_configuracion))
+test=SnmpCliApp()
+print(len(test.dic_configuracion))

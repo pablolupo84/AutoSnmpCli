@@ -1,0 +1,10 @@
+2022-05-23 12:09:54.302408:Inicializando Datos - Config.ini
+2022-05-23 12:09:54.302408:TrapAgentAddress: Peloncho
+2022-05-23 12:09:54.321413:Port: 162
+2022-05-23 12:09:54.321413:CommunityName: my-area
+2022-05-23 12:09:54.338535:ModeCommunity: public
+2022-05-23 12:11:26.506561:Inicializando Datos - Config.ini
+2022-05-23 12:11:26.506561:TrapAgentAddress: Peloncho
+2022-05-23 12:11:26.525853:Port: 162
+2022-05-23 12:11:26.525853:CommunityName: my-area
+2022-05-23 12:11:26.540578:ModeCommunity: public
