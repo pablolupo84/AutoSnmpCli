@@ -9,7 +9,8 @@ Version: 0.1
 class config():
     
     """Constructor: Recibe un path valido y retorna un diccionario parseado"""    
-    def __init__(self,path):
+    
+    def __init__(self,path = "../config.ini"):
         self.path = path
         self.fileParser = configparser.ConfigParser()
         self.fileParser.read(self.path)  
@@ -27,11 +28,10 @@ class config():
         self.fileParser.write(open(self.path,'w'))
 
 # TEST clase_config.py
-# configuracion=config('../config.ini')
-# print(configuracion)
-# items=configuracion.ShowItemSection('TRANSPORT_SETUP')
+# configuracion=config()
+# items=configuracion.showItemSection('TRANSPORT_SETUP')
 # print (items)
-# print (configuracion.ShowValueItem('TRANSPORT_SETUP','TrapAgentAddress'))
-# configuracion.change('TRANSPORT_SETUP','TrapAgentAddress','Peloncho')
-# print (configuracion.ShowValueItem('TRANSPORT_SETUP','TrapAgentAddress'))
-# configuracion.write()
+# print (configuracion.showValueItem('TRANSPORT_SETUP','TrapAgentAddress'))
+# configuracion.changeValueItem('TRANSPORT_SETUP','TrapAgentAddress','Peloncho')
+# print (configuracion.showValueItem('TRANSPORT_SETUP','TrapAgentAddress'))
+# configuracion.writeFile()
