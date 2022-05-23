@@ -28,7 +28,7 @@ class FileConfigIni():
         self.fileParser.write(open(self.path,'w'))
 
 # TEST clase_config.py
-# configuracion=FileConfigIni()
+# configuracion=FileConfigIni("../config.ini")
 # items=configuracion.showItemSection('TRANSPORT_SETUP')
 # print (items)
 # print (configuracion.showValueItem('TRANSPORT_SETUP','TrapAgentAddress'))
