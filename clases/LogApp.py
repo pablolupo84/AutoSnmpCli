@@ -44,9 +44,9 @@ class LogAppOutput(LogApp):
         self.msgError=str(datetime.now()) + ":" + msgError + "\n"
         print(self.msgError)
         
-    def writeLog(self,msgError):
-        self.msgError=str(datetime.now()) + ":" + msgError + "\n"
-        return self.msgError
+    #def writeLog(self,msgError):
+    #    self.msgError=str(datetime.now()) + ":" + msgError + "\n"
+    #    return self.msgError
 
 # TEST log_file.py
 # mensajeError="ESte es un nuevo mensaje de error"

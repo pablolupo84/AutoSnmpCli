@@ -29,7 +29,6 @@ class SnmpCliApp():
         #self.logApp=LogApp.LogAppOutput()
         self.snmpEngine= engine.SnmpEngine()
         self.datosConfigIni=FileConfigIni.FileConfigIni()
-
         self.InicializarDatos()
         self.listenTraps()
 
