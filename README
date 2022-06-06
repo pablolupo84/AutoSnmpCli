@@ -1,0 +1,4 @@
+PPS-Pablo Lupo
+Se debe proveer una aplicación y/o proceso Windows desarrollado en lenguaje Python, el cual debe capturar traps del protocolo snmp y loguearlos en un archivo de texto plano o mostrarlos por estándar output. 
+La aplicación debe estar operativa en la red del sistema Scada. Es por esto, que se define utilizar un archivo de configuración del tipo .ini (“Windows Initialization file”). 
+Este tipo de archivo de configuración es utilizado en las aplicaciones típicas de la empresa, y sirve para configurar la aplicación de manera que haya parámetros configurables como la ip del equipo en el que estará operativa la aplicación. Ademas, se define con el usuario la utilización de la versión 2 del protocolo snmp.
